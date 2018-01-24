@@ -59,10 +59,10 @@ public class SVNResource {
 	}
 
 	public boolean equals(Object object) {
-		if (!(object instanceof MVNResource)) {
+		if (!(object instanceof SVNResource)) {
 			return false;
 		}
-		MVNResource other = (MVNResource) object;
+		SVNResource other = (SVNResource) object;
 		EqualsBuilder eqb = new EqualsBuilder();
 		eqb.append(getUser(), other.getUser());
 		eqb.append(getPassword(), other.getPassword());

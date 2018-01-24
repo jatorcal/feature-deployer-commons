@@ -22,10 +22,10 @@ public class MVNResource {
 	}
 
 	public boolean equals(Object object) {
-		if (!(object instanceof SVNResource)) {
+		if (!(object instanceof MVNResource)) {
 			return false;
 		}
-		SVNResource other = (SVNResource) object;
+		MVNResource other = (MVNResource) object;
 		EqualsBuilder eqb = new EqualsBuilder();
 		eqb.append(getMvnProjectPath(), other.getMvnProjectPath());
 		return eqb.isEquals();
