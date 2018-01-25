@@ -6,16 +6,22 @@ import org.apache.commons.lang.builder.HashCodeBuilder;
 public class TomcatAPIResources {
 
 	// Tomcat's manager-script user
-	public String user;
+	private String user;
 	
 	// Tomcat's manager-script user
-	public String password;
+	private String password;
+	
+	// Tomcat's host
+	private String host;
+	
+	// Tomcat's port
+	private String port;
 	
 	// War
-	public String warPath;
+	private String warPath;
 
 	// Context
-	public String context;
+	private String context;
 	
 	
 	public String getUser() {
@@ -32,6 +38,22 @@ public class TomcatAPIResources {
 
 	public void setPassword(String password) {
 		this.password = password;
+	}
+
+	public String getHost() {
+		return host;
+	}
+
+	public void setHost(String host) {
+		this.host = host;
+	}
+
+	public String getPort() {
+		return port;
+	}
+
+	public void setPort(String port) {
+		this.port = port;
 	}
 
 	public String getWarPath() {
@@ -54,8 +76,10 @@ public class TomcatAPIResources {
 		HashCodeBuilder hcb = new HashCodeBuilder();
 		hcb.append(getUser());
 		hcb.append(getPassword());
+		hcb.append(getHost());
+		hcb.append(getPort());
 		hcb.append(getWarPath());
-		hcb.append(getWarPath());
+		hcb.append(getContext());
 		return hcb.toHashCode();
 	}
 
@@ -66,9 +90,11 @@ public class TomcatAPIResources {
 		TomcatAPIResources other = (TomcatAPIResources) object;
 		EqualsBuilder eqb = new EqualsBuilder();
 		eqb.append(getUser(), other.getUser());
-		eqb.append(getUser(), other.getPassword());
-		eqb.append(getUser(), other.getWarPath());
-		eqb.append(getUser(), other.getWarPath());
+		eqb.append(getPassword(), other.getPassword());
+		eqb.append(getHost(), other.getHost());
+		eqb.append(getPort(), other.getPort());
+		eqb.append(getWarPath(), other.getWarPath());
+		eqb.append(getContext(), other.getContext());
 		return eqb.isEquals();
 	}
 }

@@ -3,7 +3,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>feature.deployer</groupId>
 	<artifactId>feature-deployer-commons</artifactId>
-	<version>0.0.2-SNAPSHOT</version>
+	<version>0.0.3-SNAPSHOT</version>
 	<name>feature-deployer-commons</name>
 	<description>Commons library for feature deployer eclipse plugin and rest services</description>
 
