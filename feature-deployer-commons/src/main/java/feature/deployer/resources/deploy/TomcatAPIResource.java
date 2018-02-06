@@ -3,7 +3,7 @@ package feature.deployer.resources.deploy;
 import org.apache.commons.lang.builder.EqualsBuilder;
 import org.apache.commons.lang.builder.HashCodeBuilder;
 
-public class TomcatAPIResources {
+public class TomcatAPIResource {
 
 	// Tomcat's manager-script user
 	private String user;
@@ -84,10 +84,10 @@ public class TomcatAPIResources {
 	}
 
 	public boolean equals(Object object) {
-		if (!(object instanceof TomcatAPIResources)) {
+		if (!(object instanceof TomcatAPIResource)) {
 			return false;
 		}
-		TomcatAPIResources other = (TomcatAPIResources) object;
+		TomcatAPIResource other = (TomcatAPIResource) object;
 		EqualsBuilder eqb = new EqualsBuilder();
 		eqb.append(getUser(), other.getUser());
 		eqb.append(getPassword(), other.getPassword());
