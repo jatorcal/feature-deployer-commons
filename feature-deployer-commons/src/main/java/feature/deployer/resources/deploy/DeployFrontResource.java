@@ -5,6 +5,8 @@ import java.util.List;
 import org.apache.commons.lang.builder.EqualsBuilder;
 import org.apache.commons.lang.builder.HashCodeBuilder;
 
+import feature.deployer.resources.mysql.DefinedFrontProjectResource;
+
 public class DeployFrontResource {
 
 	// projectsSourceCodePath
@@ -12,6 +14,9 @@ public class DeployFrontResource {
 	
 	// serverJsParameters
 	private List<ServerJsParameterResource> serverJsParameters;
+	
+	// frontProject
+	private DefinedFrontProjectResource frontProject;
 	
 	public String getProjectsSourceCodePath() {
 		return projectsSourceCodePath;
@@ -27,12 +32,21 @@ public class DeployFrontResource {
 
 	public void setServerJsParameters(List<ServerJsParameterResource> serverJsParameters) {
 		this.serverJsParameters = serverJsParameters;
+	}	
+
+	public DefinedFrontProjectResource getFrontProject() {
+		return frontProject;
+	}
+
+	public void setFrontProject(DefinedFrontProjectResource frontProject) {
+		this.frontProject = frontProject;
 	}
 
 	public int hashCode() {
 		HashCodeBuilder hcb = new HashCodeBuilder();
 		hcb.append(getProjectsSourceCodePath());
 		hcb.append(getServerJsParameters());
+		hcb.append(getFrontProject());
 		return hcb.toHashCode();
 	}
 
@@ -44,6 +58,7 @@ public class DeployFrontResource {
 		EqualsBuilder eqb = new EqualsBuilder();
 		eqb.append(getProjectsSourceCodePath(), other.getProjectsSourceCodePath());
 		eqb.append(getServerJsParameters(), other.getServerJsParameters());
+		eqb.append(getFrontProject(), other.getFrontProject());
 		return eqb.isEquals();
 	}
 }
